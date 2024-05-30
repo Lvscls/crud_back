@@ -7,8 +7,6 @@ import crud, models, schemas
 from database import SessionLocal, engine
 import populate_db
 
-models.Base.metadata.create_all(bind=engine)
-
 if not crud.get_items(SessionLocal()):
     models.Base.metadata.create_all(bind=engine)
     populate_db.populate_db()
