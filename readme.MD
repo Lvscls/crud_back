@@ -12,8 +12,8 @@ Ce projet est une application web simple utilisant FastAPI pour gérer des opér
 1. Clonez le dépôt :
 
    ```bash
-   git clone https://github.com/votre-utilisateur/votre-repo.git
-   cd votre-repo
+   git clone https://github.com/Lvscls/crud_back.git
+   cd crud_back
    ```
 
 2. Créez et activez un environnement virtuel :
