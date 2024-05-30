@@ -9,8 +9,9 @@ import populate_db
 
 models.Base.metadata.create_all(bind=engine)
 
-populate_db.populate_db()
-
+if not crud.get_items(SessionLocal()):
+    models.Base.metadata.create_all(bind=engine)
+    populate_db.populate_db()
 app = FastAPI()
 
 
