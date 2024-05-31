@@ -2,9 +2,16 @@ from sqlalchemy.orm import Session
 import models, schemas
 from database import SessionLocal
 
+def clear_db(db: Session):
+    db.query(models.Item).delete()
+    db.query(models.Category).delete()
+    db.commit()
+
 
 def populate_db():
     db = SessionLocal()
+    
+    clear_db(db)
     
     categories = [
         schemas.CategoryCreate(name="Électronique"),

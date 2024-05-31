@@ -93,6 +93,13 @@ def read_category(category_id: int, db: Session = Depends(get_db)):
 def create_category(category: schemas.CategoryCreate, db: Session = Depends(get_db)):
     return crud.create_category(db=db, category=category)
 
+@app.delete("/categories/{category_id}/", response_model=schemas.Category)
+def delete_category(category_id: int, db: Session = Depends(get_db)):
+    deleted_category = crud.delete_category(db=db, category_id=category_id)
+    if deleted_category is None:
+        raise HTTPException(status_code=404, detail="Category not found")
+    return deleted_category
+
 
 @app.get("/health")
 def health_check():
