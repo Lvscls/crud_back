@@ -73,10 +73,19 @@ Ce projet est une application web simple utilisant FastAPI pour gérer des opér
 - **POST** `/categories/` : Créer une nouvelle catégorie
 - **GET** `/categories/` : Obtenir la liste des catégories
 - **GET** `/categories/{category_id}/` : Obtenir une catégorie par ID
+- **DELETE** `/categories/{category_id}/` : Supprimer un item par ID
 
 ## Peuplement de la Base de Données
 
 À l'initialisation, la base de données est peuplée avec des catégories et des items de base. Vous pouvez modifier le fichier `populate_db.py` pour ajouter ou modifier les données initiales.
+
+## Test Unitaire
+
+Lancez les tests unitaires avec
+
+   ```bash
+   pytest test/
+   ```
 
 
 ## Licence
